@@ -1,0 +1,79 @@
+﻿Initial files from the local project, to be consolidated
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	new file:   .classpath
+#	new file:   .gitattributes
+#	new file:   .gitignore
+#	new file:   .project
+#	new file:   .settings/org.eclipse.jdt.core.prefs
+#	new file:   bin/millionPrimes.txt
+#	new file:   bin/problem13.txt
+#	new file:   bin/problem18.txt
+#	new file:   bin/problem22a.txt
+#	new file:   bin/problem42.txt
+#	new file:   bin/problem67.txt
+#	new file:   src/Solution.java
+#	new file:   src/millionPrimes.txt
+#	new file:   src/problem01.java
+#	new file:   src/problem02.java
+#	new file:   src/problem03.java
+#	new file:   src/problem04.java
+#	new file:   src/problem05.java
+#	new file:   src/problem06.java
+#	new file:   src/problem07.java
+#	new file:   src/problem08.java
+#	new file:   src/problem09.java
+#	new file:   src/problem10.java
+#	new file:   src/problem11.java
+#	new file:   src/problem12.java
+#	new file:   src/problem13.java
+#	new file:   src/problem13.txt
+#	new file:   src/problem14.java
+#	new file:   src/problem15.java
+#	new file:   src/problem16.java
+#	new file:   src/problem17.java
+#	new file:   src/problem18.java
+#	new file:   src/problem18.txt
+#	new file:   src/problem19.java
+#	new file:   src/problem20.java
+#	new file:   src/problem21.java
+#	new file:   src/problem22.java
+#	new file:   src/problem22a.txt
+#	new file:   src/problem23.java
+#	new file:   src/problem24.java
+#	new file:   src/problem25.java
+#	new file:   src/problem26.java
+#	new file:   src/problem27.java
+#	new file:   src/problem28.java
+#	new file:   src/problem29.java
+#	new file:   src/problem30.java
+#	new file:   src/problem31.java
+#	new file:   src/problem32.java
+#	new file:   src/problem33.java
+#	new file:   src/problem34.java
+#	new file:   src/problem35.java
+#	new file:   src/problem36.java
+#	new file:   src/problem37.java
+#	new file:   src/problem38.java
+#	new file:   src/problem39.java
+#	new file:   src/problem40.java
+#	new file:   src/problem41.java
+#	new file:   src/problem42.java
+#	new file:   src/problem42.txt
+#	new file:   src/problem43.java
+#	new file:   src/problem44.java
+#	new file:   src/problem46.java
+#	new file:   src/problem47.java
+#	new file:   src/problem48.java
+#	new file:   src/problem49.java
+#	new file:   src/problem50.java
+#	new file:   src/problem51.java
+#	new file:   src/problem67.java
+#	new file:   src/problem67.txt
+#	new file:   src/testing.java
+#
+
