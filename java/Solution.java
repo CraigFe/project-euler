@@ -1,9 +1,6 @@
-/**
- * The generic prototype of a problem solution
- * @author Craig
- *
- */
-public class Solution {
-	private int nStrats; //The number of strategies supplied
+//All solution classes will implement this interface,
+//allowing for unit testing to be performed (see Testing.java)
 
+public interface Solution {
+	public String run();
 }
