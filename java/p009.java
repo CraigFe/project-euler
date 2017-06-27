@@ -1,24 +1,31 @@
-import static java.lang.System.out;
-import java.lang.Math;
+/**
+ * Find the Pythagorean triplet for which perimeter = 1000
+ * https://projecteuler.net/problem=9
+ * 
+ * @author cf443
+ */
 
-//https://projecteuler.net/problem=9
-class problem09 {
+public final class p009 implements Solution {
 
-	public static void main(String[] args) {
-		int a=0, b=1;
+	/*
+	 * Given that a < b, simply iterate through all possible values of
+	 */
+	@Override
+	public String run() {
+		
+		int a=0, 
+		    b=1, 
+		    p=1000; //Perimeter, set at 1000
 
 		for (; b < 500; b++) {
-			if ((500000-1000*b)%(1000-b) == 0) {
-				a = (500000-1000*b)/(1000-b);
+			if ((500000-p*b)%(p-b) == 0) {
+				a = (500000-p*b)/(p-b);
 				break;
 			}
 		}
-		int c = (int) Math.sqrt((long) (a*a + b*b));
+		int c = (int) Math.sqrt(a*a + b*b);
 		
-		out.println("a: "+a);
-		out.println("b: "+b);
-		out.println("c: "+c);
-		out.println("abc: " + a*b*c);
+		return Integer.toString(a*b*c);
 	}
 	
 }
