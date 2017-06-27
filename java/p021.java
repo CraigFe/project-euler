@@ -4,6 +4,7 @@
  * and b are an amicable pair and each of a and b are called amicable numbers.
  * 
  * Evaluate the sum of all the amicable numbers under 10000.
+ * https://projecteuler.net/problem=21
  * 
  * @author cf443
  */
