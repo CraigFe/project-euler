@@ -1,21 +1,28 @@
 import java.math.BigInteger;
 
-//https://projecteuler.net/problem=16
-class problem16 {
+/**
+ * What is the sum of the digits of the number 2^1000?
+ * 
+ * @author cf443
+ */
+public final class p016 implements Solution {
 	
-	public static void main(String... ignored) {
-		long start = System.nanoTime();
-
-		BigInteger x = BigInteger.valueOf(2).pow(1000);
+	/*
+	 * The solution is straightforward using the BigInteger library. Simply
+	 * calculate the value of 2^1000 and calculate the sum of the digits via
+	 * iteration.
+	 */
+	@Override
+	public String run() {
+		
+		String tmp = BigInteger.ONE.shiftLeft(1000).toString();
 		int dsum = 0;
 		
-		while (!x.equals(BigInteger.ZERO)) {
-			dsum += x.mod(BigInteger.TEN).intValue();
-			x = x.divide(BigInteger.TEN);
+		for (int i = 0; i < tmp.length(); i++) {
+			dsum += tmp.charAt(i) - '0';
 		}
 			
-		System.out.println(dsum);
-		System.out.println("Finished in " + (System.nanoTime()-start)/1000/1000.00 + "ms.");
+		return Integer.toString(dsum);
 	}
 	
 }
