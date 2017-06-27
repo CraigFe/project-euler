@@ -16,6 +16,7 @@ public final class p021 implements Solution {
 	 * each once is amicable using the definition by brute force, keeping
 	 * an accumulator.
 	 */
+	@Override
 	public String run() {
 
 		long sum = 0, //Accumulator 
