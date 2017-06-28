@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-class problem47 {
-	public static void main(String... ignored) throws Exception {
-		long startTime = System.nanoTime();
-		long lastPrint = System.currentTimeMillis();
-
+public final class p047 implements Solution {
+	
+	@Override
+	public String run() {
+		
 		List<Integer> primes = new ArrayList<Integer>();
 		
 		//Load the first million primes into a list
@@ -19,12 +19,12 @@ class problem47 {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		System.out.println("Primes loaded in "+(System.nanoTime()-startTime)/1000/1000.00+"ms.");
 		
-		int test = 0;
-		int prime, primefactors;
-		int consec = 0;
-		int consecTarget = 4;
+		int test = 0, 
+		    consec = 0, 
+		    consecTarget = 4, 
+		    prime, 
+		    primefactors;
 		
 		for (test = 1; consec != consecTarget; test++) {
 			primefactors = 0;
@@ -36,8 +36,8 @@ class problem47 {
 			if (primefactors == consecTarget) consec++;
 			else consec = 0;
 		}
-		System.out.println(test-consecTarget);
-		System.out.println("Process completed in "+(System.nanoTime()-startTime)/1000/1000.00+"ms.");
+		
+		return Integer.toString(test-consecTarget);
 	}
 
 }
