@@ -1,32 +1,33 @@
-import static java.lang.System.out;
-import java.lang.Math;
-
-//https://projecteuler.net/problem=12
-class problem12 {
+/**
+ * What is the value of the first triangular number to have over five hundred divisors?
+ * https://projecteuler.net/problem=12
+ * 
+ * @author cf443
+ */
+public final class p012 implements Solution {
 	
-	public static void main(String[] args) {
-		int divs = 0;
+	/*
+	 * A simple brute-force solution which counts the number of divisors for each of the
+	 * triangular numbers until one is found which has more than 500 divisors 
+	 */
+	@Override
+	public String run() {
+		int divs = 0,
+			max = 0; //Maximum divs
+		
 		long tri = 0; //current triangular number
-		int max = 0; //maximum divs
 		
 		for (int n = 1; divs < 500; n++) {
-			tri = triangle(n);
+			tri += n; //Triangle is the ith triangular number
+			
 			divs = noDivisors(tri);
-			if (divs > max) {
-				max = divs;
-				out.println("Divs: "+divs+" Triangle: "+tri);
-			}
+			if (divs > max) max = divs;
 		}
 		
-		out.println("Final values:");
-		out.println("Divs: "+divs+" Triangle: "+tri);
+		return Long.toString(tri);
 	}
 	
-	public static long triangle(long n) {
-		if (n==1L) return 1;
-		return n + triangle(n-1);
-	}
-	
+	//Calculates the number of divisors of a number by trying all of them
 	public static int noDivisors(long n) {
 		int divs = 0; //Account for n%n=0
 		for (double i = 1; i <= Math.sqrt(n); i++) {
