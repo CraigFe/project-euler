@@ -1,21 +1,28 @@
 import java.math.BigInteger;
 
-//https://projecteuler.net/problem=20
-class problem20 {
+/**
+ * Find the sum of the digits in the number 100!
+ * https://projecteuler.net/problem=20
+ * 
+ * @author cf443
+ */
+public final class p020 implements Solution {
 	
-	public static void main(String... ignored) {
-		long start = System.nanoTime();
-		
+	/*
+	 * Simply calculate the value of 100! using the BigInteger library and then compute the sum of
+	 * its digits iteratively.
+	 */
+	public String run() {
 		String n = factorial(100).toString();
-		long sum = 0;
-		for (int i=0; i<n.length();i++) {
-			sum += Integer.valueOf(n.substring(i,i+1));
+		int sum = 0;
+		for (int i = 0; i < n.length(); i++) {
+			sum += n.charAt(i) - '0';
 		}
 		
-		System.out.println(sum);
-		System.out.println("Finished in " + (System.nanoTime()-start)/1000/1000.00 + "ms.");
+		return Integer.toString(sum);
 	}
 	
+	//Factorial by iteration
 	public static BigInteger factorial(long n) {
 		BigInteger output = BigInteger.ONE;
 		for (long i=n;i>0;i--) output=output.multiply(BigInteger.valueOf(i));
