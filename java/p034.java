@@ -1,40 +1,40 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-
-class problem34 {
+/**
+ * Find the sum of all numbers which are equal to the sum of the factorial of their digits.
+ * https://projecteuler.net/problem=34
+ * 
+ * @author cf443
+ */
+public final class p034 implements Solution {
 	
-	public static void main(String... ignored) {
-		long startTime = System.nanoTime();
+	/* The solution can be simply solved by simply brute-forcing through the range of numbers
+	 * for which it is possible for a number to equal the sum of factorials of its digits. If
+	 * a number n has d >= 8 digits, then even in the maximal case of all digits being 9:
+	 * 		d * 9! < 10^d <= n
+	 * 
+	 * Thus, only numbers with 7 digits or less are possible solutions. The maximum number
+	 * achievable with 7 digits is 7*9!, so this is a reasonable upper bound for calculations.
+	 * 
+	 * 1 = 1! and 2 = 2! are excluded as they are not sums.
+	 */
+	@Override
+	public String run() {
 
-		//Preload factorials into an array
-		long[] facts = new long[10];
-		for (int i = 0; i < 9; i++) {
-			facts[i] = factorial(i);
-		}
-
-		int m,sum;
-		int total = 0;
+		int total = 0; //Accumulator
 		
 		//7*9! = 2540160
 		for (int n = 10; n <= 2540160; n++) {
-			m=n;
-			sum=0;
-			while (m!=0) {
-				sum+=facts[m%10];
-				m/=10;
+			int tmp = n; //Temporary value to perform destructive calculations on the loop counter
+			int sum = 0; //Running sum of the factorials of the digits
+			
+			while (tmp != 0) {
+				sum += facts[tmp % 10];
+				tmp /= 10;
 			}
-			if (n == sum) {
-				System.out.println(n);
-				total+=n;
-			}
+			if (n == sum) total+=n;
 		}
-		System.out.println("Total: "+total);
-		System.out.println("Process completed in "+(System.nanoTime()-startTime)/1000/1000.00+"ms.");
+		return Integer.toString(total);
 	}
-	
-	public static long factorial(long n) {
-		if (n <= 1) return 1;
-		return n*factorial(n-1);
-	}
+
+	// Hard-coded values for 0!, 1!, ..., 9!
+	private static int[] facts = {1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880};
 }
