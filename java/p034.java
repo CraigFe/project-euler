@@ -23,13 +23,11 @@ public final class p034 implements Solution {
 		
 		//7*9! = 2540160
 		for (int n = 10; n <= 2540160; n++) {
-			int tmp = n; //Temporary value to perform destructive calculations on the loop counter
 			int sum = 0; //Running sum of the factorials of the digits
 			
-			while (tmp != 0) {
-				sum += facts[tmp % 10];
-				tmp /= 10;
-			}
+			//Keep dividing by 10 and adding the factorial of the last digit
+			for (int tmp = n; tmp != 0; tmp /= 10 ) sum += facts[tmp % 10];
+			
 			if (n == sum) total+=n;
 		}
 		return Integer.toString(total);
