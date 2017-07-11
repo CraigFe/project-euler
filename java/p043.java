@@ -1,11 +1,8 @@
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
-//nth lexicographic prime 987654321
-class problem43 {
-	public static void main(String... ignored) throws Exception {
-		long startTime = System.nanoTime();
+public final class p043 implements Solution {
+	public String run() {
 		
 		//Generate digit set
 		List<Integer> digits = new ArrayList<Integer>();
@@ -30,8 +27,7 @@ class problem43 {
 		}
 
 		
-		System.out.println("\n"+sum);
-		System.out.println("Process completed in "+(System.nanoTime()-startTime)/1000/1000.00+"ms.");
+		return Long.toString(sum);
 	}
 	
 	public static long factorial(long n) {
@@ -39,9 +35,8 @@ class problem43 {
 		return n*factorial(n-1);
 	}
 	
-	public static long nthOrdering(int n, List<Integer> digits) throws Exception {
+	public static long nthOrdering(int n, List<Integer> digits) {
 		int places = digits.size();
-		if (n > factorial(places)) throw new Exception("N is too large");
 		
 		List<Integer> output = new ArrayList<Integer>();
 		int remain = n - 1;
@@ -49,11 +44,6 @@ class problem43 {
 		int x = 0; //Current digit
 		
 		while (!digits.isEmpty()) {
-			/*System.out.println();
-			System.out.println("digits: "+digits.toString());
-			System.out.println("output: "+output.toString());
-			System.out.println("  perm: "+remain);
-			System.out.println("   pos: "+pos);*/
 			
 			x = (int) (remain / factorial(places-1-pos));
 			remain -= factorial(places-1-pos)*x;
