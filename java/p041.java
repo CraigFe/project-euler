@@ -3,9 +3,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 //nth lexicographic prime 987654321
-class problem41 {
-	public static void main(String... ignored) throws Exception {
-		long startTime = System.nanoTime();
+public final class p041 implements Solution {
+	
+	@Override
+	public String run() {
 		
 		//Generate digit set
 		List<Integer> digits = new ArrayList<Integer>();
@@ -20,9 +21,7 @@ class problem41 {
 			}
 		}
 		
-		
-		System.out.println(pandigital);
-		System.out.println("Process completed in "+(System.nanoTime()-startTime)/1000/1000.00+"ms.");
+		return Long.toString(pandigital);
 	}
 	
 	public static long factorial(long n) {
@@ -30,9 +29,8 @@ class problem41 {
 		return n*factorial(n-1);
 	}
 	
-	public static long nthOrdering(int n, List<Integer> digits) throws Exception {
+	public static long nthOrdering(int n, List<Integer> digits) {
 		int places = digits.size();
-		if (n > factorial(places)) throw new Exception("N is too large");
 		
 		List<Integer> output = new ArrayList<Integer>();
 		int remain = n - 1;
