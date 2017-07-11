@@ -7,8 +7,11 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
-class problem49 {
-	public static void main(String... ignored) throws Exception {
+
+public final class p049 implements Solution {
+	
+	@Override
+	public String run() {
 		long startTime = System.nanoTime();
 		long lastPrint = System.currentTimeMillis();
 
@@ -62,7 +65,6 @@ class problem49 {
 			}
 		}
 
-		System.out.println("Process completed in "+(System.nanoTime()-startTime)/1000/1000.00+"ms.");
 	}
 	
 	public static long factorial(long n) {
@@ -84,11 +86,6 @@ class problem49 {
 		int x = 0; //Current digit
 		
 		while (!digits.isEmpty()) {
-			/*System.out.println();
-			System.out.println("digits: "+digits.toString());
-			System.out.println("output: "+output.toString());
-			System.out.println("  perm: "+remain);
-			System.out.println("   pos: "+pos);*/
 			
 			x = (int) (remain / factorial(places-1-pos));
 			remain -= factorial(places-1-pos)*x;
