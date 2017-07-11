@@ -1,7 +1,10 @@
 import java.math.BigInteger;
-class problem37 {
+
+
+public final class p037 implements Solution {
 	
-	public static void main(String... ignored) {
+	@Override
+	public String run() {
 		long startTime = System.nanoTime();
 		int counter = 0;
 		int sum = 0;
@@ -15,8 +18,7 @@ class problem37 {
 			}
 		}
 		
-		System.out.println("Total: "+sum);
-		System.out.println("Process completed in "+(System.nanoTime()-startTime)/1000/1000.00+"ms.");
+		return Integer.toString(run);
 	}
 	
 	public static boolean isTruncatablePrime(int p) {
