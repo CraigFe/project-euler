@@ -1,11 +1,9 @@
-import java.util.ArrayList;
-import java.util.List;
 
-class problem39 {
+
+public final class p039 implements Solution {
 	
-	public static void main(String... ignored) {
-		long startTime = System.nanoTime();
-
+	@Override
+	public String run() {
 		int solutions = 0, max = 0;
 		
 		for (int p = 12; p <= 1000; p++) {
@@ -21,9 +19,7 @@ class problem39 {
 				System.out.println("p = "+p+": "+max+" solutions");
 			}
 		}
-			
-
 		
-		System.out.println("Process completed in "+(System.nanoTime()-startTime)/1000/1000.00+"ms.");
+		return Integer.toString(solutions);
 	}
 }
