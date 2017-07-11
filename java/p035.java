@@ -1,19 +1,17 @@
 import java.math.BigInteger;
-class problem35 {
+
+
+public final class p035 implements Solution {
 	
-	public static void main(String... ignored) {
-		long startTime = System.nanoTime();
+	@Override
+	public String run() {
 		int counter = 0;
 		
 		for (int i = 2; i < 1000000; i++) {
-			if (isCircularPrime(i)) {
-				System.out.println(i);
-				counter++;
-			}
+			if (isCircularPrime(i)) counter++;
 		}
 		
-		System.out.println("Total: "+counter);
-		System.out.println("Process completed in "+(System.nanoTime()-startTime)/1000/1000.00+"ms.");
+		return Integer.toString(counter);
 	}
 	
 	public static boolean isCircularPrime(int p) {
