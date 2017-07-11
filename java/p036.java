@@ -1,7 +1,8 @@
-class problem36 {
+
+public final class p036 implements Solution {
 	
-	public static void main(String... ignored) {
-		long startTime = System.nanoTime();
+	@Override
+	public String run() {
 		long total = 0;
 		
 		for (int i = 1; i < 1000000; i++) {
@@ -10,10 +11,8 @@ class problem36 {
 				System.out.println(Integer.toString(i,10)+" = "+Integer.toString(i,2));
 			}
 		}
+		return Long.toString(total);
 		
-		System.out.println("Total: "+total);
-		
-		System.out.println("Process completed in "+(System.nanoTime()-startTime)/1000/1000.00+"ms.");
 	}
 	
 	public static boolean isPalindrome(String s) {
