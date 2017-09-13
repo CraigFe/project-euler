@@ -1,10 +1,11 @@
+import java.util.stream.IntStream;
+
 /**
  * Calculate the sum of all multiples of 3 and 5 less than 1000
  * https://projecteuler.net/problem=1
  * 
  * @author cf443
  */
-
 public final class p001 implements Solution {
 	
 	/*
@@ -13,14 +14,10 @@ public final class p001 implements Solution {
 	 */
 	@Override
 	public String run() {
-		
-		int sum = 0; //Accumulator
-		
-		for (int i = 1; i < 1000; i++) {
-			if (i%3 == 0 || i%5 == 0) sum += i;
-		}
-		
-		return Integer.toString(sum);
+        return String.valueOf(IntStream.iterate(1, i -> i + 1)
+                .limit(999)
+                .filter(i -> i % 3 == 0 || i % 5 == 0)
+                .sum());
 	}
 	
 	
